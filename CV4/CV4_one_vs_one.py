@@ -8,6 +8,7 @@ from sklearn.utils.multiclass import unique_labels
 import typing
 from sklearn.metrics import f1_score, make_scorer, plot_confusion_matrix
 import matplotlib.pyplot as plt
+from sklearn.naive_bayes import GaussianNB
 
 dataset = '3'
 suffix = 'tr'
@@ -81,11 +82,23 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.50, random
 svm = svm.fit(X_train,y_train)
 y_pred = svm.predict(X_test)
 
-f1_score = f1_score(y_test, y_pred,  average='micro')
-print(f1_score)
+f1_score_svm = f1_score(y_test, y_pred,  average='micro')
+print('One v One SVM f1 score:' + str(f1_score_svm))
+
+
+gnb = GaussianNB()
+gnb.fit(X_train,y_train)
+y_pred = gnb.predict(X_test)
+
+f1_score_gnb = f1_score(y_test, y_pred,  average='micro')
+print("naive bayes f1 score:"+str(f1_score_gnb))
 
 plot_confusion_matrix(svm, X_test, y_test, cmap=plt.cm.Blues)
 plt.savefig('figs/one_v_one/data'+str(dataset)+'_'+str(suffix)+'_confusion_50_50.png')
+plt.clf()
+
+plot_confusion_matrix(gnb, X_test, y_test, cmap=plt.cm.Blues)
+plt.savefig('figs/naive_bayes/data'+str(dataset)+'_'+str(suffix)+'_confusion_50_50.png')
 plt.clf()
 
 

@@ -8,6 +8,7 @@ from sklearn.utils.multiclass import unique_labels
 import typing
 from sklearn.metrics import f1_score, plot_confusion_matrix
 import matplotlib.pyplot as plt
+from sklearn.naive_bayes import GaussianNB
 
 dataset = '3'
 suffix = 'tr'
@@ -60,16 +61,28 @@ class SVM_OneVsMany(BaseEstimator, ClassifierMixin):
         return _cy
 
 svm = SVM_OneVsMany()
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=42)
 svm = svm.fit(X_train,y_train)
 y_pred = svm.predict(X_test)
 
 
-f1_score = f1_score(y_test, y_pred,  average='micro')
-print(f1_score)
+f1_score_svm = f1_score(y_test, y_pred,  average='micro')
+print("one vs all SVM f1 score:"+str(f1_score_svm))
+
+
+gnb = GaussianNB()
+gnb.fit(X_train,y_train)
+y_pred = gnb.predict(X_test)
+
+f1_score_gnb = f1_score(y_test, y_pred,  average='micro')
+print("naive bayes f1 score:"+str(f1_score_gnb))
 
 plot_confusion_matrix(svm, X_test, y_test, cmap=plt.cm.Blues)
 plt.savefig('figs/one_v_all/data'+str(dataset)+'_'+str(suffix)+'_confusion_50_50.png')
+plt.clf()
+
+plot_confusion_matrix(svm, X_test, y_test, cmap=plt.cm.Blues)
+plt.savefig('figs/naive_bayes/data'+str(dataset)+'_'+str(suffix)+'_confusion_50_50.png')
 plt.clf()
 
 
