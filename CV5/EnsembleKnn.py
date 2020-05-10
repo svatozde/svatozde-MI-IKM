@@ -24,3 +24,12 @@ class EnsembleKnn(BaseEstimator, ClassifierMixin):
                y_res = np.copy(y_pred)
            else:
                y_res = np.row_stack((y_res, y_pred))
+
+        ret_len = y_res.shape[len(y_res.shape) - 1]
+        ret = np.zeros(ret_len);
+
+        for i in range(0, ret_len):
+            column = y_res[:, i]
+            ret[i] = np.bincount(column).argmax()
+
+        return ret
