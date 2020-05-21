@@ -45,11 +45,11 @@ xx, yy = np.meshgrid(np.arange(x_min, x_max, (x_max - x_min)/step),
 
 random_indices = np.random.choice(Xviz.shape[0], min(500,Xviz.shape[0]), replace=False)
 
-f, axarr = plt.subplots(4, 4, sharex='col', sharey='row', figsize=(10, 8))
+f, axarr = plt.subplots(1, 2, sharex='col', sharey='row', figsize=(10, 8))
 
 ensembled_f1 = f1_score(y_test, eclf.predict(X_test), average='micro')
 
-for idx, clf, tt in zip(product([0, 1, 2, 3], [0, 1, 2, 3]),
+for idx, clf, tt in zip(product([0], [0, 1]),
                         [*eclf.estimators, eclf],
                         [knnToLabel(eclf,i) for i,_ in enumerate(eclf.estimators)] + ["ensembled f1=" + str(ensembled_f1)]):
     XX = np.c_[xx.ravel(), yy.ravel()]
