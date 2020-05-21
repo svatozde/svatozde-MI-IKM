@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="462ff677-bf1e-495e-9d48-e523ce3162b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SEM/SpamClassification.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SEM/prepare_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SEM/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SEM/wordcloud-1.7.0-cp37-cp37m-win_amd64.whl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CV5/Visualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/CV5/Visualization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEM/SpamClassification.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/SEM/SpamClassification.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +235,7 @@
       <workItem from="1589919090528" duration="19792000" />
       <workItem from="1589966179327" duration="4199000" />
       <workItem from="1589971447618" duration="25119000" />
-      <workItem from="1590061394002" duration="5586000" />
+      <workItem from="1590061394002" duration="6622000" />
     </task>
     <task id="LOCAL-00001" summary="CV4">
       <created>1587730667326</created>
@@ -312,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589879995184</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="CV5">
+      <created>1590067225725</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1590067225725</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,10 +330,10 @@
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state x="414" y="-901" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1589883006026" />
-    <state x="598" y="-961" width="1093" height="801" key="CommitChangelistDialog2" timestamp="1589879994615">
+    <state x="598" y="-961" width="1093" height="801" key="CommitChangelistDialog2" timestamp="1590067224831">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state x="598" y="-961" width="1093" height="801" key="CommitChangelistDialog2/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1589879994615" />
+    <state x="598" y="-961" width="1093" height="801" key="CommitChangelistDialog2/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1590067224831" />
     <state width="1534" height="553" key="DebuggerActiveHint" timestamp="1589928195983">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
@@ -473,6 +475,11 @@
           <url>file://$PROJECT_DIR$/SEM/SpamClassification.ipynb</url>
           <line>245</line>
           <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>file://$PROJECT_DIR$/SEM/SpamClassification.ipynb</url>
+          <line>103</line>
+          <option name="timeStamp" value="127" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
